@@ -13,7 +13,6 @@ This App is not support Apple Silicon.
 
 Notes
 --------
-**You must build this yourself from the Xcode project**, or else it will not work on your system due to not being signed by your own certificate. Any issues opened because of invalid signing will be closed. I modified this in order to allow for SIP to remain enabled by creating your own binaries that are therefore signed.
 
 The version of VoltageShift contained in this repository is modified in order to account for VoltageShift.kext being loaded into your EFI folder and config.plist. **You must load the kext into your EFI for this version to work.**
 
