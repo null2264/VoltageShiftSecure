@@ -23,8 +23,6 @@ Building
 ```bash
 # Build the kernel extension (kext)
 xcodebuild  -target VoltageShift
-# Change owner
-sudo chown -R root:wheel build/Release/VoltageShift.kext
 # Build command line tool
 xcodebuild  -target voltageshift
 ```
@@ -45,19 +43,19 @@ This program supports macOS 10.12 or above.
 
 You can view your current voltage offset,CPU freqency,power and temperture settings with the following command:
 
-    ./voltageshift info
+    sudo ./voltageshift info
     
 You can continue to monitor the CPU frequency, power and temperture by using:
 
-    ./voltageshift mon
+    sudo ./voltageshift mon
     
 Six types of voltage offsets are dispenible to change, however we only suggest undervolting the CPU and GPU only.
 
-    ./voltageshift offset <CPU> <GPU> <CPUCache> <SystemAgent> <Analogy I/O> <Digital I/O>
+    sudo ./voltageshift offset <CPU> <GPU> <CPUCache> <SystemAgent> <Analogy I/O> <Digital I/O>
     
 for example reduced CPU -50mv and GPU -30mv
 
-    ./voltageshift offset -50 -30
+    sudo ./voltageshift offset -50 -30
 
 If you set too low the system will freeze, please turn OFF completely and turn ON computer to reset back the undervolt to 0mV.
 
@@ -89,7 +87,7 @@ set system auto apply CPU -20mv and cache -20mv, run only boot .
 
 You can remove the launchd with the following command:
 
-     ./voltageshift removelaunchd
+     sudo ./voltageshift removelaunchd
      
     
 For check the kext is loaded
