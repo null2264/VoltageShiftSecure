@@ -113,8 +113,13 @@ IOReturn VoltageShiftAnVMSR::newUserClient( task_t owningTask, void * securityID
     
     IOReturn ioReturn = kIOReturnSuccess;
     
-    
-    
+    // Only root user can access MSRs
+    if (IOUserClient::clientHasPrivilege(owningTask, kIOClientPrivilegeAdministrator) != kIOReturnSuccess)
+    {
+        IOLog("VoltageShiftAnVMSR: Only root user is allowed to create user client\n");
+        return(kIOReturnNotPrivileged);
+    }
+
     AnVMSRUserClient *client = NULL;
 
     if (mClientCount > MAXUSERS)

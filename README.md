@@ -2,14 +2,13 @@
 Undervoltage Tools for MacOS (Haswell and Broadwell)<br />
 Change Turbo and Power Limit for most Intel platform Macbook
 All source code protected by      The GNU General Public License V 3.0   <br />
-MSR Kext Driver modified from 
-[AnVMSR](http://www.insanelymac.com/forum/topic/291833-anvmsr-v10-tool-and-driver-to-read-from-or-write-to-cpu-msr-registers/)
-by  Andy Vandijck Copyright (C) 2013 AnV Software
+MSR Kext Driver modified for better security from
+[AnVMSR](https://web.archive.org/web/20180226084223/http://www.insanelymac.com/forum/topic/291833-anvmsr-v10-tool-and-driver-to-read-from-or-write-to-cpu-msr-registers/)
+by Andy Vandijck Copyright (C) 2013 AnV Software
 
     NOTICE: THIS TOOL IS FOR ADVANCED USERS AND MAY DAMAGE YOUR COMPUTER PERMANENTLY.
     
-
-This App is not support Apple Silicon.
+This app isn't compatible with Apple Silicon
 
 Notes
 --------
@@ -99,13 +98,10 @@ For check the kext is loaded
     
 should show "com.sicreative.VoltageShift"  on return.
 
-
-#### Caution: Remaining the kext on system may violate system because other program may change the MSR without root (sudo) authorizing.
-
-
-
 ChangeLog
 ---------
+Versions 1.27:
+1. Only allow root user to read/write MSRs, improving security.
 
 Versions 1.26:
 1. Modified to allow for EFI loading of kext.
@@ -115,7 +111,6 @@ Versions 1.25:
 
 Versions 1.24:
 1. Support Big Sur and Universial building on Xcode12 (load on Apple Silicon will simply exit )
-
 
 Version 1.22:
 1. Change read of timer from system api instead of MSR for improve of compatibility. 
